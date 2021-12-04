@@ -16,9 +16,9 @@ func main() {
 	runtime.SetBlockProfileRate(1)
 	defer runtime.SetBlockProfileRate(0)
 	go func() {
-		for i := 0; i < 10000000; i++ {
+		for i := 0; i < 100; i++ {
 			go func() {
-				<-time.After(2  * time.Second)
+				<-time.After(2 * time.Second)
 			}()
 		}
 	}()

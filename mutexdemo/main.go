@@ -12,13 +12,13 @@ import (
 
 func main() {
 	var (
-		buf bytes.Buffer
+		buf  bytes.Buffer
 		lock sync.Mutex
 	)
 	runtime.SetMutexProfileFraction(1)
 	defer runtime.SetMutexProfileFraction(0)
 	go func() {
-		for i := 0; i < 100000; i++ {
+		for i := 0; i < 10000000; i++ {
 			go func() {
 				lock.Lock()
 				//time.Sleep(1 * time.Second)
